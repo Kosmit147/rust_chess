@@ -1,0 +1,9 @@
+[package]
+name = "rust_chess"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+glium = "0.34"
+winit = "0.29" # glium 0.34 requires winit 0.29, doesn't work with winit 0.30
+anyhow = "1.0"
