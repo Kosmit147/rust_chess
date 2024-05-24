@@ -1,13 +1,22 @@
-use glium::Surface;
+use self::{chess_board::ChessBoard, renderer::Renderer};
 
-pub struct App {}
+mod chess_board;
+mod renderer;
+
+pub struct App {
+    board: ChessBoard,
+    renderer: Renderer,
+}
 
 impl App {
     pub fn new() -> Self {
-        App {}
+        App {
+            board: ChessBoard::new(),
+            renderer: Renderer::new(),
+        }
     }
 
     pub fn render(&self, frame: &mut glium::Frame) {
-        frame.clear_color(0.0, 0.0, 0.0, 1.0);
+        self.renderer.render(frame);
     }
 }
